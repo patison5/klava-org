@@ -22,6 +22,8 @@
 
 			<form action="#" class="create-order__form">
 
+				<h4 class="form__title">Шаг 1</h4>
+
 				<label for="order-id1" class="order__input-label">
 					<span class="order__input-label">Дата заказа</span>
 					<input type="text" required="required" class="order__input-text">
@@ -49,8 +51,11 @@
 		<div class="search__form">
 			<form action="#" class="search-order__form">
 
+				<h4 class="form__title">Добавить заказ</h4>
+
 				<label for="order-id1" class="order__input-label">
 					<span class="order__input-label">Поиск товара</span>
+
 					<div class="search-input__wrap">
 						<input type="text" required="required" class="order__input-text order__input-search">
 						<i class="search-ico"></i>
@@ -58,6 +63,25 @@
 				</label>
 
 				<input type="submit" class="send__order-btn btn" value="Добавить">
+			</form>
+		</div>
+
+		<div class="search__form">
+			<form action="#" class="search-order__form">
+
+				<h4 class="form__title">Авторизация</h4>
+
+				<label for="order-id3" class="order__input-label">
+					<span class="order__input-label">Логин</span>
+					<input type="text" required="required" class="order__input-text">
+				</label>
+
+				<label for="order-id3" class="order__input-label">
+					<span class="order__input-label">Пароль</span>
+					<input type="text" required="required" class="order__input-text">
+				</label>
+
+				<input type="submit" class="send__order-btn btn" value="Авторизоваться">
 			</form>
 		</div>
 
