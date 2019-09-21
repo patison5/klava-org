@@ -51,24 +51,18 @@ input { -webkit-appearance: none; }
 
 
 .btn {
-	padding: 15px 20px 15px 30px;
-	border-radius: 50px;
-	background: #ffd524;
-	display: inline-block;
+	border-radius: 4px;
+	background: #1e65a2;
+	display: block;
 	font-weight: bold;
 	border: none;
+	padding: 15px 0;
+	width: 100%;
+	color: #fff;
 }
-
-
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("opentype");
-  font-style: normal;
-}
-
-
-body {
-	font-family: "Roboto-Regular";
+.btn:hover {
+	background: #0e3c63;
+	cursor: pointer;
 }
 
 /************************ ОБЩИЕ СТИЛИ ************************/
@@ -79,7 +73,77 @@ body {
 
 
 .center {
-	width: 960px;
+	width: 100%;
+	padding: 15px;
 	margin: 0 auto;
 	display: block;
+}
+
+
+.text-center {
+	width: 300px;
+	margin: 20px auto;
+}
+
+
+.create-order__form {
+	width: 350px;
+	margin: 25px auto;
+	display: block;
+	padding: 25px;
+	border: 1px dashed #ccc;
+	border-radius: 4px;
+}
+
+.order__input-label {
+	width: 100%;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.order__input-text {
+	display: block;
+	width: 100%;
+	border: 1px dashed #ccc;
+	height: 35px;
+	padding: 0 15px;
+	border-radius: 4px;
+}
+
+
+
+
+.grid-table {
+	width: 100%;
+	display: block;
+	border-spacing: 0px;
+  	border-collapse: collapse;
+  	border-radius: 4px;
+  	overflow: hidden;
+}
+
+.grid-table__row {
+	/*display: grid;*/
+	/*grid-template-columns: repeat(14, 1fr); */
+	/*padding: 15px;*/
+	/*border: 1px solid #ccc;*/
+}
+.grid-table__column {
+	border: 1px dashed #ccc;
+	padding: 10px;
+}
+
+
+thead {
+	background: #1e65a2;
+	color: #fff;
+
+}
+
+thead .grid-table__column {
+	border-top: none;
+	border-bottom: none;
+	/*display: flex;*/
+	/*justify-content: center;*/
+
 }

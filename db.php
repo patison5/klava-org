@@ -2,9 +2,9 @@
     // header("Content-Type: text/html; charset=utf-8");
 
     $servername = "localhost";
-    $username = "id10777377_admin";
-    $password = "hWrnNNPjeZgN*7#";
-    $database = "id10777377_mydatabase";
+    $username = "root";
+    $password = "";
+    $database = "klava_database";
     $dbport = 3306;
 
     // Создаем подключение
