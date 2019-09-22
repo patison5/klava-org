@@ -4,7 +4,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "klava_database";
+    $database = "cost_delivery_database";
     $dbport = 3306;
 
     // Создаем подключение
