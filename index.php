@@ -94,7 +94,7 @@
 
 				<label for="order-id4" class="order__input-label">
 					<span class="order__input-label">Расстояние доставки в км.</span>
-					<input type="text" required="required" class="order__input-text">
+					<input type="text" required="required" class="order__input-text" id="transport__distance">
 				</label>
 
 				<input type="submit" class="send__order-btn btn" value="Добавить заказ">
@@ -168,7 +168,7 @@
 								<td class="grid-table__column">'.$product['product_weight'].'</td>
 								<td class="grid-table__column">'.$product['product_volume'].'</td>
 								<td class="grid-table__column">'.$product['product_price'].'</td>
-								<td class="grid-table__column"></td>
+								<td class="grid-table__column">	<input type="text"  id="count__areat-js" class="count__area"></td>
 								<td class="grid-table__column"></td>
 								<td class="grid-table__column"></td>
 								<td class="grid-table__column"></td>
@@ -176,9 +176,87 @@
 
 						}
 					?>
-
 				</tbody>
+
+				<tfoot>
+					<tr class="grid-table__row">
+						<th class="grid-table__column">Порядковый номер</th>
+						<th class="grid-table__column">Наименование товара</th>
+						<th class="grid-table__column">Характеристика товара</th>
+						<th class="grid-table__column">Поставщик</th>
+						<th class="grid-table__column">Контактное лицо</th>
+						<th class="grid-table__column">Контактный телефон</th>
+						<th class="grid-table__column">Сайт</th>
+						<th class="grid-table__column">Вес единицы,кг</th>
+						<th class="grid-table__column">Объем единицы,куб.м</th>
+						<th class="grid-table__column">Цена за ед. руб</th>
+						<th class="grid-table__column">Количество</th>
+						<th class="grid-table__column">Итого вес, кг</th>
+						<th class="grid-table__column">Итого объем куб.м</th>
+						<th class="grid-table__column">Сумма, руб</th>
+					</tr>
+					
+					<tr class="grid-table__row">
+						<th class="grid-table__column">Итого стоимость заказа</th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+					</tr>
+
+					<tr class="grid-table__row">
+						<th class="grid-table__column">транспортные расходы</th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+					</tr>
+
+					<tr class="grid-table__row">
+						<th class="grid-table__column">Итого стоимость заказа с учетом транспорта</th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"><p class="footer-table__text">Транспортные расходы </p><input type="text"  id="transport-js" class="count__area"></th>
+						<th class="grid-table__column">Итоговая сумма с учетом транспорта</th>
+					</tr>
+				</tfoot>
 			</table>
+
+
+
+			<div class="table__footer-panel">
+				<span class="btn countIt" id="count_now-js">подсчитать</span>
+
+				<input type="text" class="transport__price">
+				span.
+			</div>
 		</div>
 	</div>
 

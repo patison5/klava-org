@@ -182,7 +182,11 @@ input { -webkit-appearance: none; }
 thead {
 	background: #1e65a2;
 	color: #fff;
+}
 
+tfoot tr:first-child .grid-table__column {
+	background: #1e65a2;
+	color: #fff;
 }
 
 thead .grid-table__column {
@@ -226,10 +230,43 @@ th.headerSortDown {
 
 
 .form__result-row {
-	display: block;
+	display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-gap: 0;
+    cursor: pointer;
 }
 
 .search__body {
 	width: 100%;
 	display: block;
+}
+
+
+
+
+
+
+.table__footer-panel{
+	display: flex;
+	/*text-align: right;*/
+	padding: 15px 0;
+	align-items: flex-end;
+	justify-content: right;
+}
+
+.countIt {
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+}
+
+.count__area {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+}
+
+
+.footer-table__text {
+	display: block;
+	margin-bottom: 10px;
 }

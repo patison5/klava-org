@@ -1,3 +1,48 @@
+function countTotal () {
+	let rows = document.getElementsByClassName('grid-table__row');
+
+
+
+	for (let i = 1; i < rows.length -2 ; i++) {
+
+		console.log(rows[i].getElementsByClassName('count__area')[0])
+
+
+		let weight = parseFloat(rows[i].getElementsByClassName('grid-table__column')[7].innerHTML);
+		let volume = parseFloat(rows[i].getElementsByClassName('grid-table__column')[8].innerHTML);
+		let price  = parseFloat(rows[i].getElementsByClassName('grid-table__column')[9].innerHTML);
+		let amount = rows[i].getElementsByClassName('count__area')[0].value;
+		let transport = document.getElementById('transport-js');
+		let transport__distance = document.getElementById('transport__distance');
+
+		if (amount.length != 0) {
+			amount = parseFloat(amount);
+
+			if (transport.value.length != 0) {
+				console.log(weight, volume, price, amount)
+				console.log('')
+
+				rows[i].getElementsByClassName('count__area')[0].style.border = '1px solid #ccc';
+				transport.style.border = '1px solid #ccc';
+
+
+				rows[i].getElementsByClassName('grid-table__column')[11].innerHTML = amount * weight;  // 12 столбец
+				rows[i].getElementsByClassName('grid-table__column')[12].innerHTML = amount * volume;  // 13 столбец
+				rows[i].getElementsByClassName('grid-table__column')[13].innerHTML = amount * price;   // 13 столбец
+			} else {
+				transport.style.border = '1px solid #000';
+				transport.value = transport__distance.value * price;
+			}
+
+
+		} else {
+			rows[i].getElementsByClassName('count__area')[0].style.border = '1px solid red';
+		}
+
+
+	}
+}
+
 function drawSearchTableLine (data) {
 	var form__result = document.getElementsByClassName('search-form__result')[0];
 	var form__body   = form__result.getElementsByClassName('search__body')[0];
@@ -35,6 +80,14 @@ function drawSearchTableLine (data) {
 				let cell = document.createElement('td');
 				cell.className = "grid-table__column"
 				cell.innerHTML = cells[i].innerHTML;
+
+
+				if (i == 10) {
+					let count__input = document.createElement('input')
+						count__input.className = "count__area";
+
+					cell.appendChild(count__input)
+				}
 
 				mainRow.appendChild(cell);
 			}
@@ -97,4 +150,6 @@ window.onload = function  () {
 		sendSearchRequest(this)
 	})
 
+	let countNowBtn = document.getElementById('count_now-js');
+		countNowBtn.addEventListener('click', countTotal);
 }
