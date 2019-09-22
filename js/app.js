@@ -3,7 +3,7 @@ function countTotal () {
 
 
 
-	for (let i = 1; i < rows.length -2 ; i++) {
+	for (let i = 1; i < rows.length - 4 ; i++) {
 
 		console.log(rows[i].getElementsByClassName('count__area')[0])
 

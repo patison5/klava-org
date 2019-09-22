@@ -195,7 +195,7 @@
 						<th class="grid-table__column">Итого объем куб.м</th>
 						<th class="grid-table__column">Сумма, руб</th>
 					</tr>
-					
+
 					<tr class="grid-table__row">
 						<th class="grid-table__column">Итого стоимость заказа</th>
 						<th class="grid-table__column"></th>
@@ -224,7 +224,7 @@
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
-						<th class="grid-table__column"></th>
+						<th class="grid-table__column"><input type="text"  id="transport-js" class="count__area"></th>
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
@@ -243,8 +243,8 @@
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
 						<th class="grid-table__column"></th>
-						<th class="grid-table__column"><p class="footer-table__text">Транспортные расходы </p><input type="text"  id="transport-js" class="count__area"></th>
-						<th class="grid-table__column">Итоговая сумма с учетом транспорта</th>
+						<th class="grid-table__column"></th>
+						<th class="grid-table__column"></th>
 					</tr>
 				</tfoot>
 			</table>
