@@ -97,26 +97,35 @@
 					<input type="text" required="required" class="order__input-text">
 				</label>
 
-				<input type="submit" class="send__order-btn btn">
+				<input type="submit" class="send__order-btn btn" value="Добавить заказ">
 			</form>
 		</div>
 
-		<div class="search__form">
-			<form action="#" class="search-order__form">
+		<div class="search-form__wrap">
+			<div class="search__form">
+				<form action="#" class="search-order__form">
 
-				<h4 class="form__title">Добавить заказ</h4>
+					<h4 class="form__title">Добавить заказ</h4>
 
-				<label for="order-id1" class="order__input-label">
-					<span class="order__input-label">Поиск товара</span>
+					<label for="order-id1" class="order__input-label">
+						<span class="order__input-label">Поиск товара</span>
 
-					<div class="search-input__wrap">
-						<input type="text" required="required" class="order__input-text order__input-search">
-						<i class="search-ico"></i>
-					</div>
-				</label>
+						<div class="search-input__wrap">
+							<input type="text"  class="order__input-text order__input-search"  id="search__text">
+							<i class="search-ico"></i>
+						</div>
+					</label>
 
-				<input type="submit" class="send__order-btn btn" value="Добавить">
-			</form>
+					<input type="submit" class="send__order-btn btn" value="Добавить" id="search__from-btn">
+				</form>
+			</div>
+
+			<div class="search-form__result">
+				<table class="search-form__result-table">
+					<tbody class="search__body">
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 		<div class="center">
@@ -140,7 +149,7 @@
 					</tr>
 				</thead>
 
-				<tbody>
+				<tbody id="main__table-js">
 
 					<?php 
 
@@ -170,102 +179,12 @@
 
 				</tbody>
 			</table>
-
-			<!-- <table id="myTable" class="tablesorter grid-table">
-				<thead>
-					<tr class="grid-table__row">
-						<th class="grid-table__column">Порядковый номер</th>
-						<th class="grid-table__column">Наименование товара</th>
-						<th class="grid-table__column">Характеристика товара</th>
-						<th class="grid-table__column">Поставщик</th>
-						<th class="grid-table__column">Контактное лицо</th>
-						<th class="grid-table__column">Контактный телефон</th>
-						<th class="grid-table__column">Сайт</th>
-						<th class="grid-table__column">Вес единицы,кг</th>
-						<th class="grid-table__column">Объем единицы,куб.м</th>
-						<th class="grid-table__column">Цена за ед. руб</th>
-						<th class="grid-table__column">Количество</th>
-						<th class="grid-table__column">Итого вес, кг</th>
-						<th class="grid-table__column">Итого объем куб.м</th>
-						<th class="grid-table__column">Сумма, руб</th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr class="grid-table__row">
-						<td class="grid-table__column">1</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь отб ГОСТ</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь, отб. ГОСТ, размер 150х215 см, плотность 142г/кв.м</td>
-						<td class="grid-table__column">ООО "текстиль"</td>
-						<td class="grid-table__column">Иван</td>
-						<td class="grid-table__column">8 800 555-35-35</td>
-						<td class="grid-table__column">textril.ru</td>
-						<td class="grid-table__column">0.250</td>
-						<td class="grid-table__column">0.0025</td>
-						<td class="grid-table__column">140.00</td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-					</tr>
-					<tr class="grid-table__row">
-						<td class="grid-table__column">1</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь отб ГОСТ</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь, отб. ГОСТ, размер 150х215 см, плотность 142г/кв.м</td>
-						<td class="grid-table__column">ООО "текстиль"</td>
-						<td class="grid-table__column">Иван</td>
-						<td class="grid-table__column">8 800 555-35-35</td>
-						<td class="grid-table__column">textril.ru</td>
-						<td class="grid-table__column">0.250</td>
-						<td class="grid-table__column">0.0025</td>
-						<td class="grid-table__column">140.00</td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-					</tr>
-					<tr class="grid-table__row">
-						<td class="grid-table__column">1</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь отб ГОСТ</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь, отб. ГОСТ, размер 150х215 см, плотность 142г/кв.м</td>
-						<td class="grid-table__column">ООО "текстиль"</td>
-						<td class="grid-table__column">Иван</td>
-						<td class="grid-table__column">8 800 555-35-35</td>
-						<td class="grid-table__column">textril.ru</td>
-						<td class="grid-table__column">0.250</td>
-						<td class="grid-table__column">0.0025</td>
-						<td class="grid-table__column">140.00</td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-					</tr>
-					<tr class="grid-table__row">
-						<td class="grid-table__column">1</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь отб ГОСТ</td>
-						<td class="grid-table__column">Простыня 1.5 спальная бязь, отб. ГОСТ, размер 150х215 см, плотность 142г/кв.м</td>
-						<td class="grid-table__column">ООО "текстиль"</td>
-						<td class="grid-table__column">Иван</td>
-						<td class="grid-table__column">8 800 555-35-35</td>
-						<td class="grid-table__column">textril.ru</td>
-						<td class="grid-table__column">0.250</td>
-						<td class="grid-table__column">0.0025</td>
-						<td class="grid-table__column">140.00</td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-						<td class="grid-table__column"></td>
-					</tr>
-				</tbody>
-			</table> -->
 		</div>
 	</div>
 
 	<script>
 		$(document).ready(function(){
 			$("#myTable").tablesorter();
-
-			console.log('hello')
 		});
 	</script>
 </body>
