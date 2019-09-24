@@ -194,4 +194,32 @@ window.onload = function  () {
 		})
 	}
 
+
+
+	var deleteProductBtn = document.getElementsByClassName('delete-product__btn-js');
+	for (var i = 0; i < deleteProductBtn.length; i++) {
+		deleteProductBtn[i].addEventListener('click', function (e) {
+			e.preventDefault();
+
+			var request  = new XMLHttpRequest();
+			var formData = new FormData();
+
+			formData.append("products_id",  this.dataset.product_id);
+			request.open('POST', 'http://localhost/klava-org/deleteProduct.php');
+
+			// при изменении состояния запроса
+		    request.addEventListener('readystatechange', function() {
+
+				if (this.readyState == 4 && this.status == 200) {
+					var data;
+					console.log(this.responseText)				
+				}
+		    });
+
+		     //отправляем запрос на сервер
+	    	request.send(formData);
+
+		})
+	}
+
 }

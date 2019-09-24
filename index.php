@@ -79,58 +79,61 @@
 			</div>
 
 			<div class="tab-panel__elements" id="tab-el__1">
+				
 
-				<form action="#" class="create-order__form">
-
+				<!-- форма добавления нового товара в базу данных -->
+				<form action="addProduct.php" class="create-order__form">
 					<h4 class="form__title">Добавить товар</h4>
 
 					<label for="order-id1" class="order__input-label">
 						<span class="order__input-label">Название</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_title" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id2" class="order__input-label">
 						<span class="order__input-label">Характеристика</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_characteristic" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id3" class="order__input-label">
 						<span class="order__input-label">Поставщик</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_provider" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id4" class="order__input-label">
 						<span class="order__input-label">Контактное лицо</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="contact_person" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id5" class="order__input-label">
 						<span class="order__input-label">Телефон</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="contact_tell_number" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id6" class="order__input-label">
 						<span class="order__input-label">Сайт</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="site" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id7" class="order__input-label">
 						<span class="order__input-label">Вес товара</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_weight" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id8" class="order__input-label">
 						<span class="order__input-label">Объем товара</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_volume" required="required" class="order__input-text create-new__product-js">
 					</label>
 
 					<label for="order-id9" class="order__input-label">
 						<span class="order__input-label">цена товара</span>
-						<input type="text" required="required" class="order__input-text">
+						<input type="text" name="product_price" required="required" class="order__input-text create-new__product-js">
 					</label>
+
 
 					<input type="submit" class="send__order-btn btn" value="Добавить товар">
 				</form>
+				<!-- //форма добавления нового товара в базу данных -->
 
 
 
@@ -172,7 +175,7 @@
 									<td class="grid-table__column-main">'.$product['product_weight'].'</td>
 									<td class="grid-table__column-main">'.$product['product_volume'].'</td>
 									<td class="grid-table__column-main">'.$product['product_price'].'</td>
-									<td class="grid-table__column-main"><span class="delete-btn">удалить</span></td>
+									<td class="grid-table__column-main"><span class="delete-btn delete-product__btn-js" data-product_id="'.$product['id'].'">удалить</span></td>
 								</tr>';
 
 							}

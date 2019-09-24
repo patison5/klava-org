@@ -310,6 +310,10 @@ th.headerSortDown {
 	display: none;
 }
 
+#tab-el__1 {
+	display: block;
+}
+
 .tab-menu__element{
 	padding: 15px 0;
 	text-align: center;
