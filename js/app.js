@@ -1,7 +1,9 @@
 function countTotal () {
 	let rows = document.getElementsByClassName('grid-table__row');
 
-
+	var TOTAL_WEIGHT = 0;
+	var TOTAL_VOLUME = 0;
+	var TOTAL_COUNT  = 0;
 
 	for (let i = 1; i < rows.length - 4 ; i++) {
 
@@ -15,24 +17,27 @@ function countTotal () {
 		let transport = document.getElementById('transport-js');
 		let transport__distance = document.getElementById('transport__distance');
 
+		let ownTransportValue = document.getElementById('transport_own_value-js').value;
+
 		if (amount.length != 0) {
 			amount = parseFloat(amount);
 
-			if (transport.value.length != 0) {
-				console.log(weight, volume, price, amount)
-				console.log('')
 
-				rows[i].getElementsByClassName('count__area')[0].style.border = '1px solid #ccc';
-				transport.style.border = '1px solid #ccc';
-
-
-				rows[i].getElementsByClassName('grid-table__column')[11].innerHTML = amount * weight;  // 12 столбец
-				rows[i].getElementsByClassName('grid-table__column')[12].innerHTML = amount * volume;  // 13 столбец
-				rows[i].getElementsByClassName('grid-table__column')[13].innerHTML = amount * price;   // 13 столбец
-			} else {
-				transport.style.border = '1px solid #000';
+			if (ownTransportValue.length == 0) {
 				transport.value = transport__distance.value * price;
+			} else {
+				transport.value = ownTransportValue * price;
 			}
+
+
+			rows[i].getElementsByClassName('count__area')[0].style.border = '1px solid #ccc';
+			transport.style.border = '1px solid #ccc';
+
+
+			rows[i].getElementsByClassName('grid-table__column')[11].innerHTML = amount * weight;  // 12 столбец
+			rows[i].getElementsByClassName('grid-table__column')[12].innerHTML = amount * volume;  // 13 столбец
+			rows[i].getElementsByClassName('grid-table__column')[13].innerHTML = amount * price;   // 13 столбец
+		
 
 
 		} else {
@@ -40,7 +45,21 @@ function countTotal () {
 		}
 
 
+
+		TOTAL_WEIGHT += parseFloat(rows[i].getElementsByClassName('grid-table__column')[11].innerHTML);
+		TOTAL_VOLUME += parseFloat(rows[i].getElementsByClassName('grid-table__column')[12].innerHTML);
+		TOTAL_COUNT  += parseFloat(rows[i].getElementsByClassName('grid-table__column')[13].innerHTML);
+		// подсчет итоговых по столбцам
+
 	}
+
+
+	//вывд тотальных столбцов....
+	document.getElementById('total_weight').innerHTML = TOTAL_WEIGHT;
+	document.getElementById('total_volume').innerHTML = TOTAL_VOLUME;
+	document.getElementById('total_count').innerHTML  = TOTAL_COUNT;
+
+	// document.getElementById('transport__price-js').innerHTML = 
 }
 
 function drawSearchTableLine (data) {
@@ -142,12 +161,18 @@ function sendSearchRequest (search__input) {
 
 window.onload = function  () {
 	let search__form  = document.getElementsByClassName('search-order__form')[0];
-	let search_brn 	  = document.getElementById('search__from-btn');
+	// let search_brn 	  = document.getElementById('search__from-btn');
 	let search__text  = document.getElementById('search__text');
+	let loopBTN = document.getElementById('l_start_search__-js');
+
 
 
 	search__text.addEventListener('change', function (e) {
 		sendSearchRequest(this)
+	})
+
+	loopBTN.addEventListener('click', function (e) {
+		sendSearchRequest(search__text)
 	})
 
 	let countNowBtn = document.getElementById('count_now-js');

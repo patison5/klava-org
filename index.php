@@ -241,11 +241,11 @@
 
 								<div class="search-input__wrap">
 									<input type="text"  class="order__input-text order__input-search"  id="search__text">
-									<i class="search-ico"></i>
+									<i class="search-ico" id="l_start_search__-js"></i>
 								</div>
 							</label>
 
-							<input type="submit" class="send__order-btn btn" value="Добавить" id="search__from-btn">
+							<!-- <input type="submit" class="send__order-btn btn" value="Добавить" id="search__from-btn"> -->
 						</form>
 					</div>
 
@@ -313,13 +313,16 @@
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
-							<th class="grid-table__column"></th>
-							<th class="grid-table__column"></th>
-							<th class="grid-table__column"></th>
+							<th class="grid-table__column" id="total_weight"></th>
+							<th class="grid-table__column" id="total_volume"></th>
+							<th class="grid-table__column" id="total_count"></th>
 						</tr>
 
 						<tr class="grid-table__row">
-							<th class="grid-table__column">транспортные расходы</th>
+							<th class="grid-table__column">
+								<span class="th-text">транспортные расходы</span>
+								<input type="text"  id="transport_own_value-js" class="th_input" placeholder="Свое значние">
+							</th>
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
@@ -329,10 +332,10 @@
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
-							<th class="grid-table__column"><input type="text"  id="transport-js" class="count__area"></th>
+							<th class="grid-table__column"><input type="text"  id="transport-js" class="count__area" disabled="disabled"></th>
 							<th class="grid-table__column"></th>
 							<th class="grid-table__column"></th>
-							<th class="grid-table__column"></th>
+							<th class="grid-table__column" id="transport__price-js"></th>
 						</tr>
 
 						<tr class="grid-table__row">
@@ -358,8 +361,6 @@
 
 				<div class="table__footer-panel">
 					<span class="btn countIt" id="count_now-js">подсчитать</span>
-<!-- 
-					<input type="text" class="transport__price"> -->
 				</div>
 			</div>
 

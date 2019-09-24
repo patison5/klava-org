@@ -242,6 +242,11 @@ th.headerSortDown {
     cursor: pointer;
 }
 
+
+.form__result-row:hover {
+	background: #cccccc6b;
+}
+
 .search__body {
 	width: 100%;
 	display: block;
@@ -277,9 +282,15 @@ th.headerSortDown {
 	text-align: center;
 }
 
-.count__area {
+.count__area, 
+.th_input {
 	padding: 5px 10px;
 	border: 1px solid #ccc;
+}
+
+.th-text {
+	margin-bottom: 10px;
+    display: block;
 }
 
 
