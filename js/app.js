@@ -152,4 +152,46 @@ window.onload = function  () {
 
 	let countNowBtn = document.getElementById('count_now-js');
 		countNowBtn.addEventListener('click', countTotal);
+
+
+	//последовательное появление полей во второй вкладке
+	var stepOneFinishBtn = document.getElementById('step_one__finish');
+
+	stepOneFinishBtn.addEventListener('click', function () {
+		let form = document.getElementById('step-one__form');
+		let inputs = form.getElementsByClassName('order__input-text');
+		let flag = true;
+
+
+		for (let i = 0; i < inputs.length; i++) {
+			if (inputs[i].value == ""){
+				flag = false;
+				break;
+			}
+		}
+		
+		if (flag)
+			document.getElementsByClassName('search-form__wrap')[0].style.display = "block";
+	})
+
+
+	//Обработчик трех вкладок - меню
+	var tabElements = document.getElementsByClassName('tab-menu__element');
+
+	for (var i = 0; i < tabElements.length; i++) {
+		tabElements[i].addEventListener('click', function () {
+
+			var tab__elements = document.getElementsByClassName('tab-panel__elements');
+
+			for (var i = 0; i < tab__elements.length; i++) {
+				if (tab__elements[i].id == this.dataset.id) {
+					tab__elements[i].style.display = "block";
+				} else {
+					tab__elements[i].style.display = "none";
+				}
+			}
+
+		})
+	}
+
 }
